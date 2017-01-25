@@ -1,0 +1,38 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :勤務地 %><br>
+    <%= f.select :location, Hash[*Constants::PREF_LIST.flatten], {},{class:"form-control bs_formbox_input"} %>
+  </div>
+  <div class="field">
+    <%= f.label :職種 %><br>
+    <%= f.select :location, Constants::CATEGORY_LIST.map{|x| [x, x]}, {},{class:"form-control bs_formbox_input"} %>
+  </div>
+  <div class="field">
+    <%= f.label "仕事期間（長期・短期)" %><br>
+    <%= f.select :term, Constants::TERM_LIST.map{|x| [x, x]}, {},{class:"form-control bs_formbox_input"} %>
+  </div>
+  <div class="field">
+    <%= f.label :営業所拠点（派遣会社の拠点）%><br>
+    <%= f.select :office_location, Hash[*Constants::PREF_LIST.flatten], {},{class:"form-control bs_formbox_input"} %>
+  </div>
+  <div class="field">
+    <%= f.label :雇用形態（人材派遣・紹介予定派遣・両方） %><br>
+    <%#= f.text_field :emp_pattern %>
+    <%= f.select :term, Constants::EMP_PATTERN_LIST.map{|x| [x, x]}, {},{class:"form-control bs_formbox_input"} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

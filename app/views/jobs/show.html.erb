@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>勤務地:</strong>
+  <%= @job.location %>
+</p>
+
+<p>
+  <strong>職種:</strong>
+  <%= @job.category %>
+</p>
+
+<p>
+  <strong>仕事帰還（長期・短期):</strong>
+  <%= @job.term %>
+</p>
+
+<p>
+  <strong>営業所拠点（派遣会社の拠点）:</strong>
+  <%= @job.office_location %>
+</p>
+
+<p>
+  <strong>雇用形態（人材派遣・紹介予定派遣・両方）:</strong>
+  <%= @job.emp_pattern %>
+</p>
+
+<%= link_to '編集', edit_job_path(@job) %> |
+<%= link_to '戻る', jobs_path %>
