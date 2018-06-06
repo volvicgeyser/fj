@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.3.0'
 gem 'kaminari',"0.17.0"
 gem 'jp_prefecture', '0.8.1'
 gem 'devise', '3.5.6'
