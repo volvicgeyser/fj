@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :勤務地 %><br>
-    <%= f.select :location, Hash[*Constants::PREF_LIST.flatten], {},{class:"form-control bs_formbox_input"} %>
+    <%= f.select :location, Hash[*Constants::PREF_LIST.flatten], {}, {class:"form-control bs_formbox_input"} %>
   </div>
   <div class="field">
     <%= f.label :職種 %><br>
-    <%= f.select :location, Constants::CATEGORY_LIST.map{|x| [x, x]}, {},{class:"form-control bs_formbox_input"} %>
+    <%= f.select :location, Constants::CATEGORY_LIST.map{|x| [x, x]}, {}, {class:"form-control bs_formbox_input"} %>
   </div>
   <div class="field">
     <%= f.label "仕事期間（長期・短期)" %><br>

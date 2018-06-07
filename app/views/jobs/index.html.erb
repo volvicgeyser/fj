@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to "お気に入り一覧", favorites_path %>
+
 <h1>求人検索</h1>
 <%= page_entries_info @jobs %><br>
 <% if @search.present? %>
-<strong>検索ワード:<%= @search %></strong><br>
+  <strong>検索ワード:<%= @search %></strong><br>
 <% end %>
 <%= form_tag "/jobs", :method=>:get, style:"display:inline;" do %>
 検索
@@ -21,7 +23,7 @@
       <th>仕事帰還（長期・短期)</th>
       <th>営業所拠点（派遣会社の拠点）</th>
       <th>雇用形態（人材派遣・紹介予定派遣・両方）</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -33,6 +35,16 @@
         <td><%= job.term %></td>
         <td><%= job.office_location %></td>
         <td><%= job.emp_pattern %></td>
+	<td>
+		<%= form_for(@favorite) do |f| %>
+		  <div class="field">
+	            <%= f.hidden_field :job_id, value: job.id %>
+	          </div>
+	          <div class="actions">
+	            <%= f.submit 'お気に入り登録する' %>
+	          </div>
+		<% end %>
+	</td>
         <td><%= link_to '表示', job %></td>
         <td><%= link_to '編集', edit_job_path(job) %></td>
         <td><%= link_to '削除', job, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>

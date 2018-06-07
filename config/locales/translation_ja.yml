@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      favorite: お気に入り  #g
+      job: ジョブ  #g
+
+    attributes:
+      favorite:
+        comment: コメント  #g
+
+      job:
+        category: カテゴリー  #g
+        emp_pattern: Empパターン  #g
+        location: ロケーション  #g
+        office_location: オフィスの場所  #g
+        term: 期間  #g

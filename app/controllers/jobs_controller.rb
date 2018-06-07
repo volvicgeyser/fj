@@ -7,6 +7,7 @@ class JobsController < ApplicationController
     @jobs_page = Job.page(params[:page])
     search = params[:search].to_s.strip
     @jobs = @jobs_page.searched(search)
+    @favorite = Favorite.new
   end
 
   # GET /jobs/1

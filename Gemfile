@@ -4,6 +4,7 @@ ruby '2.3.0'
 gem 'kaminari',"0.17.0"
 gem 'jp_prefecture', '0.8.1'
 gem 'devise', '3.5.6'
+gem 'i18n_generators'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
@@ -50,5 +51,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'annotate'
 end
 

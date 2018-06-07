@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favorites, except: [:new]
   resources :jobs
   root 'jobs#index'
   # The priority is based upon order of creation: first created -> highest priority.

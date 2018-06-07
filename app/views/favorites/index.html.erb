@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>お気に入り一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>求人番号</th>
+      <th>メモ欄</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @favorites.each do |favorite| %>
+      <tr>
+        <td><%= favorite.job_id %></td>
+        <td><%= favorite.comment %></td>
+        <td><%= link_to '求人を見る', job_path(favorite.job_id) %></td>
+        <td><%#= link_to 'Edit', edit_favorite_path(favorite) %></td>
+        <td><%= link_to 'お気に入りから外す', favorite, method: :delete, data: { confirm: 'お気に入りから外れますがよろしいですか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
